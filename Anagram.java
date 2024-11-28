@@ -6,6 +6,8 @@ public class Anagram {
 		System.out.println(isAnagram("William Shakespeare", "I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie", "Radium came")); // true
 		System.out.println(isAnagram("Tom Marvolo Riddle", "I am Lord Voldemort")); // true
+		System.out.println(isAnagram("hSawarma", "Shawarma")); // true
+		System.out.println(isAnagram("hSawarma", "kong flu")); // false
 
 		System.out.println(preProcess("What? No way!!!"));
 
@@ -37,7 +39,6 @@ public class Anagram {
 
 
 
-		// Returns true if the two given strings are anagrams, false otherwise.
 		public static boolean isAnagram(String str1, String str2) {
 			str1 = str1.replaceAll(" ", "").toLowerCase();
 			str2 = str2.replaceAll(" ", "").toLowerCase();
@@ -65,7 +66,6 @@ public class Anagram {
 			return count;
 		}
 
-		// Returns a random anagram of the given string.
 		public static String randomAnagram(String str) {
 			str = str.replaceAll(" ", "");
 			StringBuilder result = new StringBuilder(str);
