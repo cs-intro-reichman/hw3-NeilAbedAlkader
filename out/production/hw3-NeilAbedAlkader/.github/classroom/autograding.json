@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "name",
+      "setup": "java file of test",
+      "run": "run command",
+      "input": "input",
+      "output": "output",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    }
+  ]
+}
