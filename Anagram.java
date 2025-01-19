@@ -50,7 +50,6 @@ public class Anagram {
 	// Return the count of the times a given char appears in a string.
 	public static int countOccurrences(char c, String str) {
 		int count = 0;
-
 		for (int i = 0; i < str.length(); i++) {
 			if (str.charAt(i) == c) {
 				count++;
@@ -67,12 +66,10 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		String result = "";
-
 		for (int i = 0; i < str.length(); i++) {
 			char c = str.charAt(i);
-			if (Character.isAlphabetic(c) || Character.isWhitespace(c)) {
+			if (Character.isAlphabetic(c) || Character.isWhitespace(c)) 
 				result += Character.toLowerCase(c);
-			}
 		}
 
 		return result;
@@ -82,12 +79,10 @@ public class Anagram {
 	// preProcess and the test for isAnagram
 	public static String removeWhitespace(String str) {
 		String result = "";
-
 		for (int i = 0; i < str.length(); i++) {
 			char c = str.charAt(i);
-			if (!Character.isWhitespace(c)) {
+			if (!Character.isWhitespace(c)) 
 				result += c;
-			}
 		}
 
 		return result;
@@ -98,17 +93,13 @@ public class Anagram {
 	// characters as the given string, re-arranged in a random order.
 	public static String randomAnagram(String str) {
 		String result = "";
-
 		String strippedStr = str;
 
 		for (int i = 0; i < str.length(); i++) {
 			int randomIndex = (int) (Math.random() * strippedStr.length());
 			result += strippedStr.charAt(randomIndex);
-
-			// deletes the character from the string so that we will not select it again
 			strippedStr = strippedStr.substring(0, randomIndex) + strippedStr.substring(randomIndex + 1);
 		}
-
 		return result;
 	}
 }
