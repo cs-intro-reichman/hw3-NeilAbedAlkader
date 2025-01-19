@@ -23,73 +23,62 @@ public class Algebra {
 		System.out.println(sqrt(76123));
 	}
 
-	// Returns x1 + x2
+	
 	public static int plus(int x1, int x2) {
 		int result = x1;
-
 		for (int i = 0; i < Math.abs(x2); i++) {
-			if (x2 > 0) {
+			if (x2 > 0) 
 				result++;
-			} else {
+			else 
 				result--;
-			}
 		}
-
 		return result;
 	}
 
-	// Returns x1 - x2
+	
 	public static int minus(int x1, int x2) {
 		int result = x1;
-
 		for (int i = 0; i < Math.abs(x2); i++) {
-			if (x2 < 0) {
+			if (x2 < 0) 
 				result++;
-			} else {
+			else 
 				result--;
-			}
 		}
-
 		return result;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		int result = 0;
-
-		for (int i = 0; i < Math.abs(x2); i++) {
+		for (int i = 0; i < Math.abs(x2); i++) 
 			result = x2 > 0 ? plus(result, x1) : minus(result, x1);
-		}
-
+		
 		return result;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		int result = 1;
-
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) 
 			result = times(result, x);
-		}
-
+		
 		return result;
 	}
 
 	// Returns the integer part of x1 / x2
 	public static int div(int x1, int x2) {
 		int result = 0;
-
 		int absX1 = Math.abs(x1);
 		int absX2 = Math.abs(x2);
-
+		
 		while (absX1 >= absX2) {
 			absX1 = minus(absX1, absX2);
 			result++;
 		}
 
-		if ((x1 < 0 && x2 > 0) || (x1 > 0 && x2 < 0)) {
+		if ((x1 < 0 && x2 > 0) || (x1 > 0 && x2 < 0)) 
 			return times(result, minus(0, 1));
-		}
+		
 
 		return result;
 	}
@@ -106,11 +95,9 @@ public class Algebra {
 	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
 		int result = 0;
-
-		while (pow(plus(result, 1), 2) <= x) {
+		while (pow(plus(result, 1), 2) <= x) 
 			result++;
-		}
-
+		
 		return result;
 	}
 }
